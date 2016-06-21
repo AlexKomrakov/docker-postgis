@@ -1,7 +1,7 @@
 FROM postgres:9.4
 MAINTAINER Alex Komrakov <alexkomrakov@gmail.com>
 
-ENV $POSTGIS_LOCALE en_US.utf8
+ENV POSTGIS_LOCALE en_US.utf8
 ENV POSTGIS_LOCALE_PREFIX en_US
 RUN localedef -i $POSTGIS_LOCALE_PREFIX -c -f UTF-8 -A /usr/share/locale/locale.alias $POSTGIS_LOCALE
 
