@@ -1,5 +1,8 @@
 FROM postgres:9.4
-MAINTAINER Mike Dillon <mike@appropriate.io>
+MAINTAINER Alex Komrakov <alexkomrakov@gmail.com>
+
+RUN localedef -i $POSTGIS_LOCALE_PREFIX -c -f UTF-8 -A /usr/share/locale/locale.alias $POSTGIS_LOCALE
+ENV LANG $POSTGIS_LOCALE
 
 ENV POSTGIS_MAJOR 2.2
 ENV POSTGIS_VERSION 2.2.2+dfsg-1.pgdg80+1
